@@ -10,7 +10,9 @@
 
     <!-- Checks whether files end with a new line. -->
     <!-- See http://checkstyle.sourceforge.net/config_misc.html#NewlineAtEndOfFile -->
-    <module name="NewlineAtEndOfFile"/>
+    <module name="NewlineAtEndOfFile">
+         <property name="fileExtensions" value="java,gradle,xml,txt,prefab"/>
+    </module>
 
     <!-- Checks that there are no tab characters ('\t') in the source code. -->
     <!-- See http://checkstyle.sourceforge.net/config_whitespace.html#FileTabCharacter -->
