@@ -15,6 +15,10 @@ task zipCodeMetrics(type: Zip) {
     archiveName = 'codemetrics.zip'
 }
 
+wrapper {
+    gradleVersion = '2.5'
+}
+
 publishing {
     publications {
         codemetrics(MavenPublication) {
