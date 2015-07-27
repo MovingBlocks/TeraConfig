@@ -1,3 +1,4 @@
+apply plugin: 'base'
 apply plugin: 'maven-publish'
 
 group = 'org.terasology.config'
@@ -6,13 +7,13 @@ task zipCodeMetrics(type: Zip) {
     description 'Creates a zip archive that contains all codemetric config files'
 
     from ('.') {
-	    include 'checkstyle/'
-	    include 'pmd/'
-	    include 'findbugs/'
+        include 'checkstyle/'
+        include 'pmd/'
+        include 'findbugs/'
     }
 
     destinationDir = file(buildDir)
-    archiveName = 'codemetrics.zip'
+    baseName = 'codemetrics'
 }
 
 wrapper {
