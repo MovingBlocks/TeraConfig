@@ -53,6 +53,14 @@
         <property name="fileExtensions" value="java"/>
         <property name="message" value="Author tags are not allowed"/>
     </module>
+    
+    <!-- Disallow empty JavaDoc -->
+    <module name="RegexpMultiline">
+        <property name="severity" value="warning" />
+        <property name="format" value="(\/\*\*)(\s|\*)*(\*\/)" />
+        <property name="fileExtensions" value="java" />
+        <property name="message" value="Empty JavaDoc" />
+    </module>
 
     <module name="TreeWalker">
         <!-- Checks for Naming Conventions -->
