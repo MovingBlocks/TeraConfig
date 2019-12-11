@@ -16,10 +16,6 @@ task zipCodeMetrics(type: Zip) {
     baseName = 'codemetrics'
 }
 
-wrapper {
-    gradleVersion = '2.5'
-}
-
 publishing {
     publications {
         codemetrics(MavenPublication) {
@@ -36,7 +32,7 @@ publishing {
                     username artifactoryUser
                     password artifactoryPass
                 }
-            }        
+            }
             url "http://artifactory.terasology.org/artifactory/libs-release-local"
         }
     }
