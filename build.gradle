@@ -1,5 +1,7 @@
-apply plugin: 'base'
-apply plugin: 'maven-publish'
+plugins {
+    id 'base'
+    id 'maven-publish'
+}
 
 group = 'org.terasology.config'
 
@@ -12,8 +14,8 @@ task zipCodeMetrics(type: Zip) {
         include 'findbugs/'
     }
 
-    destinationDir = file(buildDir)
-    baseName = 'codemetrics'
+    destinationDirectory = file(buildDir)
+    archiveBaseName = 'codemetrics'
 }
 
 publishing {
