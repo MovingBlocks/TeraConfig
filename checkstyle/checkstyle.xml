@@ -15,6 +15,10 @@
     <module name="SuppressionFilter">
         <property name="file" value="${samedir}/suppressions.xml"/>
     </module>
+          
+    <!-- Configures filter to suppress audit events for annotations -->
+    <!-- See https://checkstyle.sourceforge.io/config_filters.html#SuppressionFilter -->
+    <module name="SuppressWarningsFilter" />
 
     <!-- Checks whether files end with a new line. -->
     <!-- See http://checkstyle.sourceforge.net/config_misc.html#NewlineAtEndOfFile -->
@@ -71,6 +75,9 @@
     </module>
 
     <module name="TreeWalker">
+        <!-- Makes the annotations available to the filter. -->
+        <module name="SuppressWarningsHolder" />
+              
         <!-- Checks for Naming Conventions -->
         <!-- See http://checkstyle.sourceforge.net/config_naming.html -->
         <!-- ***************************** -->
