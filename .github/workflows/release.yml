@@ -17,15 +17,26 @@ jobs:
       - name: Zip Code Metrics
         run: ./gradlew zipCodeMetrics
       - name: Publish
+        run: ./gradlew -PartifactoryUser=${{ secrets.ARTIFACTORY_USER }} -PartifactoryPass=${{ secrets.ARTIFACTORY_PASS }} publish
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - name: Create Release
-      - name: Upload Release Assets
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ steps.get_version.outputs.VERSION }}
+          draft: false
+          prerelease: false
+      - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          # This pulls from the RELEASE event this workflow was triggered by.
-          # See https://developer.github.com/v3/activity/events/types/#releaseevent
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./build/distributions/TerasologyLauncher-${{ matrix.platform }}-${{ github.event.release.name }}.zip
-          asset_name: TerasologyLauncher-${{ matrix.platform }}.zip
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/codemetrics-${{ steps.get_version.outputs.VERSION }}.zip
+          asset_name: codemetrics-${{ steps.get_version.outputs.VERSION }}.zip
           asset_content_type: application/zip

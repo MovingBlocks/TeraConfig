@@ -1,9 +1,11 @@
 plugins {
     id 'base'
     id 'maven-publish'
+    id 'nebu‚la.release' version '13.0.0'
 }
 
 group = 'org.terasology.config'
+
 
 task zipCodeMetrics(type: Zip) {
     description 'Creates a zip archive that contains all codemetric config files'
