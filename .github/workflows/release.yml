@@ -14,10 +14,8 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Zip Code Metrics
-        run: ./gradlew zipCodeMetrics
       - name: Publish
-        run: ./gradlew -PartifactoryUser=${{ secrets.ARTIFACTORY_USER }} -PartifactoryPass=${{ secrets.ARTIFACTORY_PASS }} publish
+        run: ./gradlew -PartifactoryUser=${{ secrets.ARTIFACTORY_USER }} -PartifactoryPass=${{ secrets.ARTIFACTORY_PASS }} -Prelease.useLastTag=true publish
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
