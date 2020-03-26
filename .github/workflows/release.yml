@@ -18,7 +18,7 @@ jobs:
         run: ./gradlew -PartifactoryUser=${{ secrets.ARTIFACTORY_USER }} -PartifactoryPass=${{ secrets.ARTIFACTORY_PASS }} -Prelease.useLastTag=true publish
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -26,7 +26,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ steps.get_version.outputs.VERSION }}
+          release_name: Release v${{ steps.get_version.outputs.VERSION }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
