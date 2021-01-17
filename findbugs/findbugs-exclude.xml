@@ -25,4 +25,13 @@
     <Match>
         <Package name="~org\.terasology\.protobuf.*" />
     </Match>
+    <Match>
+        <Class name="~.*jmhTest"/>
+    </Match>
+    <Match>
+        <Class name="~.*jmhType.*"/>
+    </Match>
+    <Match>
+        <Bug pattern="JMH_BENCHMARK_METHOD_FOUND"/>
+    </Match>
 </FindBugsFilter>
