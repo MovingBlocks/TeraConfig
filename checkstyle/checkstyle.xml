@@ -269,7 +269,7 @@
         <module name="ParameterAssignment"/>
         <!-- Checks if any class or object member explicitly initialized to default for its type value. -->
         <module name="ExplicitInitialization">
-            <property name="severity" value="warning"/>
+           <property name="severity" value="ignore"/> <!-- 'ignore' because we often want to be explicit about initializations and belive the performance penalty is negligible -->
         </module>
         <!-- Check that the default is after all the cases in a switch statement. -->
         <module name="DefaultComesLast"/>
