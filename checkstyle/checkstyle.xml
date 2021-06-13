@@ -297,7 +297,7 @@
         <module name="MutableException"/>
         <!-- Check nested (internal) classes/interfaces are declared at the bottom of the class after all method and field declarations. -->
         <module name="InnerTypeLast">
-            <property name="severity" value="warning"/>
+            <property name="severity" value="info"/>
         </module>
 
         <!-- Miscellaneous other checks -->
