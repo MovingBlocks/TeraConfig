@@ -1,5 +1,4 @@
-TeraConfig
-==========
+# TeraConfig
 
 Contains configuration files for Terasology-related repositories. This repository contains configuration files for code Analytics: 
 
@@ -7,7 +6,18 @@ Contains configuration files for Terasology-related repositories. This repositor
 * FindBugs
 * PMD
 
-To use it, simply add it as a dependency and refer to it from the different tools like so:
+## Using TeraConfig
+
+Add the Terasology Artifactory to `repositories` in your gradle build file (e.g. `build.gradle`):
+```gradle
+maven {
+    name = "Terasology Artifactory"
+    url = "http://artifactory.terasology.org/artifactory/virtual-repo-live"
+    allowInsecureProtocol = true  // 😱
+}
+```
+
+With that, simply add it as a dependency and refer to it from the different tools like so:
 
 ```gradle
 configurations {
@@ -15,7 +25,7 @@ configurations {
 }
 
 dependencies {
-    codeMetrics(group: 'org.terasology.config', name: 'codemetrics', version: '1.0.0', ext: 'zip')
+    codeMetrics(group: 'org.terasology.config', name: 'codemetrics', version: '1.6.3', ext: 'zip')
 }
 
 checkstyle {
@@ -30,5 +40,10 @@ findbugs {
     excludeFilterConfig = resources.text.fromArchiveEntry(configurations.codeMetrics, "findbugs/findbugs-exclude.xml")
 }
 ```
-    
-This is it!
+
+## Releasing TeraConfig
+
+1. Tag a commit according to the version you'd like to release
+   - _the tag should be valid [SemVer](https://semver.org/#semantic-versioning-specification-semver) prefixed with `v`, e.g. `v1.2.3`_
+2. Push the tag
+3. The github action configured in this repository will automatically create and publish the respective artifact
