@@ -44,21 +44,11 @@
     </module>
   
     <!-- Disallow author names and auto-generated tags -->
-    <!-- TODO: replace with proper JavaDoc checks as soon as they work properly. See checkstyle#952 -->
-    <module name="RegexpSingleline">
-        <property name="severity" value="warning"/>
-        <property name="format" value="Created with"/>
-        <property name="ignoreCase" value="true"/>
-        <property name="fileExtensions" value="java"/>
-        <property name="message" value="Auto-generated message 'Created With' is not allowed"/>
-    </module>
-    <module name="RegexpSingleline">
-        <property name="severity" value="warning"/>
-        <property name="format" value="Created by"/>
-        <property name="ignoreCase" value="true"/>
-        <property name="fileExtensions" value="java"/>
-        <property name="message" value="Auto-generated message 'Created By' is not allowed"/>
-    </module>
+    <!-- 
+        TODO: replace with proper JavaDoc checks as soon as they work properly.
+           See https://github.com/checkstyle/checkstyle/issues/952         
+           See https://github.com/checkstyle/checkstyle/issues/2506          
+    -->
     <module name="RegexpSingleline">
         <property name="severity" value="warning"/>
         <property name="format" value="^\s*\*\s*@author"/>
