@@ -9,7 +9,7 @@
     <!-- ************************** -->
     <module name="LineLength">
         <property name="severity" value="warning"/>
-        <property name="max" value="175"/>
+        <property name="max" value="150"/>
     </module>
 
     <module name="SuppressionFilter">
