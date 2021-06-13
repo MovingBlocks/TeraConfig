@@ -224,8 +224,10 @@
         <module name="EqualsHashCode"/>
         <!-- Checks that a local variable or a parameter does not shadow a field that is defined in the same class. -->
         <module name="HiddenField">
+            <property name="severity" value="info"/>
             <property name="ignoreConstructorParameter" value="true"/>
             <property name="ignoreSetter" value="true"/>
+            <property name="setterCanReturnItsClass" value="true"/>
         </module>
         <!-- Checks for assignments in subexpressions. -->
         <module name="InnerAssignment"/>
