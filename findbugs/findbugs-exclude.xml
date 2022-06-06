@@ -4,6 +4,10 @@
         <Bug pattern="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE"/>
     </Match>
     <Match>
+        <!-- Terasology depends on shared mutable objects all the time. -->
+        <Bug pattern="EI_EXPOSE_REP2" />
+    </Match>
+    <Match>
         <Package name="~org\.terasology\.protobuf.*" />
     </Match>
     <Match>
