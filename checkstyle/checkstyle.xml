@@ -13,7 +13,7 @@
     </module>
 
     <module name="SuppressionFilter">
-        <property name="file" value="${samedir}/suppressions.xml"/>
+        <property name="file" value="${config_loc}/suppressions.xml"/>
     </module>
           
     <!-- Configures filter to suppress audit events for annotations -->
