@@ -56,7 +56,6 @@
 <!--      <exclude name="GuardLogStatementJavaUtil"/>-->
 <!--  </rule>-->
   <rule ref="category/java/errorprone.xml/InvalidSlf4jMessageFormat" />
-  <rule ref="category/java/errorprone.xml/LoggerIsNotStaticFinal" />
   <rule ref="category/java/errorprone.xml/MoreThanOneLogger" />
 
   <rule ref="category/java/bestpractices.xml/AvoidPrintStackTrace" />
