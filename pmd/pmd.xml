@@ -7,27 +7,86 @@
       Terasology PMD ruleset
   </description>
   <exclude-pattern>.*/org.terasology.protobuf/.*</exclude-pattern>
-  <rule ref="rulesets/java/basic.xml"/>
-  <rule ref="rulesets/java/braces.xml"/>
-  <rule ref="rulesets/java/clone.xml"/>
-  <!-- <rule ref="rulesets/java/codesize.xml"/> -->
-  <!-- <rule ref="rulesets/java/controversial.xml"/> -->
-  <!-- <rule ref="rulesets/java/coupling.xml"/> -->
-  <!-- <rule ref="rulesets/java/design.xml"/> -->
-  <rule ref="rulesets/java/finalizers.xml"/>
-  <!-- rule ref="rulesets/java/imports.xml"/> -->
-  <!-- <rule ref="rulesets/java/javabeans.xml"/> -->
-  <!-- <rule ref="rulesets/java/junit.xml"/> -->
-  <!-- <rule ref="rulesets/java/logging-jakarta-commons.xml"/> -->
-  <rule ref="rulesets/java/logging-java.xml">
-      <exclude name="GuardLogStatementJavaUtil"/>
-  </rule>
-  <rule ref="rulesets/java/migrating.xml"/>
-  <!-- <rule ref="rulesets/java/naming.xml"/> -->
-  <!-- <rule ref="rulesets/java/optimizations.xml"/> -->
-  <!-- <rule ref="rulesets/java/strictexception.xml"/> -->
-  <!-- <rule ref="rulesets/java/strings.xml"/> -->
-  <rule ref="rulesets/java/sunsecure.xml"/>
-  <!-- <rule ref="rulesets/java/typeresolution.xml"/> -->
-  <rule ref="rulesets/java/unusedcode.xml"/>
+<!-- inline <rule ref="rulesets/java/basic.xml"/>  -->
+  <rule ref="category/java/errorprone.xml/AvoidBranchingStatementAsLastInLoop" />
+  <rule ref="category/java/errorprone.xml/AvoidDecimalLiteralsInBigDecimalConstructor" />
+  <rule ref="category/java/errorprone.xml/AvoidMultipleUnaryOperators" />
+  <rule ref="category/java/errorprone.xml/AvoidUsingOctalValues"  />
+  <rule ref="category/java/errorprone.xml/BrokenNullCheck" />
+  <rule ref="category/java/errorprone.xml/CheckSkipResult" />
+  <rule ref="category/java/errorprone.xml/ClassCastExceptionWithToArray" />
+  <rule ref="category/java/errorprone.xml/DontUseFloatTypeForLoopIndices" />
+  <rule ref="category/java/errorprone.xml/JumbledIncrementer" />
+  <rule ref="category/java/errorprone.xml/MisplacedNullCheck" />
+  <rule ref="category/java/errorprone.xml/OverrideBothEqualsAndHashcode" />
+  <rule ref="category/java/errorprone.xml/ReturnFromFinallyBlock" />
+  <rule ref="category/java/errorprone.xml/UnconditionalIfStatement" />
+
+  <rule ref="category/java/multithreading.xml/AvoidThreadGroup" />
+  <rule ref="category/java/multithreading.xml/DontCallThreadRun" />
+  <rule ref="category/java/multithreading.xml/DoubleCheckedLocking" />
+
+  <rule ref="category/java/bestpractices.xml/AvoidUsingHardCodedIP" />
+  <rule ref="category/java/bestpractices.xml/CheckResultSet" />
+
+  <rule ref="category/java/codestyle.xml/ExtendsObject" />
+  <rule ref="category/java/codestyle.xml/ForLoopShouldBeWhileLoop" />
+
+  <rule ref="category/java/performance.xml/BigIntegerInstantiation" />
+  <rule ref="category/java/performance.xml/BooleanInstantiation" />
+
+  <rule ref="category/java/design.xml/CollapsibleIfStatements" />
+  <rule ref="category/java/design.xml/SimplifiedTernary" />
+<!--  inline <rule ref="rulesets/java/braces.xml"/>-->
+  <rule ref="category/java/codestyle.xml/ControlStatementBraces" />
+<!-- inline  <rule ref="rulesets/java/clone.xml"/>-->
+  <rule ref="category/java/errorprone.xml/CloneMethodMustBePublic" />
+  <rule ref="category/java/errorprone.xml/CloneMethodMustImplementCloneable" />
+  <rule ref="category/java/errorprone.xml/CloneMethodReturnTypeMustMatchClassName" />
+  <rule ref="category/java/errorprone.xml/CloneThrowsCloneNotSupportedException" />
+  <rule ref="category/java/errorprone.xml/ProperCloneImplementation" />
+<!-- inline <rule ref="rulesets/java/finalizers.xml"/>-->
+  <rule ref="category/java/errorprone.xml/AvoidCallingFinalize" />
+  <rule ref="category/java/errorprone.xml/EmptyFinalizer" />
+  <rule ref="category/java/errorprone.xml/FinalizeDoesNotCallSuperFinalize" />
+  <rule ref="category/java/errorprone.xml/FinalizeOnlyCallsSuperFinalize" />
+  <rule ref="category/java/errorprone.xml/FinalizeOverloaded" />
+  <rule ref="category/java/errorprone.xml/FinalizeShouldBeProtected" />
+<!-- inline <rule ref="rulesets/java/logging-java.xml">-->
+<!--      <exclude name="GuardLogStatementJavaUtil"/>-->
+<!--  </rule>-->
+  <rule ref="category/java/errorprone.xml/InvalidSlf4jMessageFormat" />
+  <rule ref="category/java/errorprone.xml/MoreThanOneLogger" />
+  <rule ref="category/java/errorprone.xml/ProperLogger" />
+
+  <rule ref="category/java/bestpractices.xml/AvoidPrintStackTrace" />
+  <!-- GuardLogStatementJavaUtil has been merged into GuardLogStatement -->
+  <rule ref="category/java/bestpractices.xml/GuardLogStatement" name="GuardLogStatementJavaUtil" />
+  <rule ref="category/java/bestpractices.xml/SystemPrintln" />
+<!-- inline <rule ref="rulesets/java/migrating.xml"/>-->
+  <rule ref="category/java/errorprone.xml/AvoidAssertAsIdentifier" />
+  <rule ref="category/java/errorprone.xml/AvoidEnumAsIdentifier" />
+
+  <rule ref="category/java/bestpractices.xml/ForLoopCanBeForeach" />
+  <rule ref="category/java/bestpractices.xml/JUnit4SuitesShouldUseSuiteAnnotation" />
+  <rule ref="category/java/bestpractices.xml/JUnit4TestShouldUseAfterAnnotation" />
+  <rule ref="category/java/bestpractices.xml/JUnit4TestShouldUseBeforeAnnotation" />
+  <rule ref="category/java/bestpractices.xml/JUnit4TestShouldUseTestAnnotation" />
+  <rule ref="category/java/bestpractices.xml/JUnitUseExpected" />
+  <rule ref="category/java/bestpractices.xml/ReplaceEnumerationWithIterator" />
+  <rule ref="category/java/bestpractices.xml/ReplaceHashtableWithMap" />
+  <rule ref="category/java/bestpractices.xml/ReplaceVectorWithList" />
+
+  <rule ref="category/java/performance.xml/ByteInstantiation" />
+  <rule ref="category/java/performance.xml/IntegerInstantiation" />
+  <rule ref="category/java/performance.xml/LongInstantiation" />
+  <rule ref="category/java/performance.xml/ShortInstantiation" />
+<!-- inline <rule ref="rulesets/java/sunsecure.xml"/>-->
+  <rule ref="category/java/bestpractices.xml/ArrayIsStoredDirectly" />
+  <rule ref="category/java/bestpractices.xml/MethodReturnsInternalArray" />
+<!-- inline <rule ref="rulesets/java/unusedcode.xml"/>-->
+  <rule ref="category/java/bestpractices.xml/UnusedFormalParameter" />
+  <rule ref="category/java/bestpractices.xml/UnusedLocalVariable" />
+  <rule ref="category/java/bestpractices.xml/UnusedPrivateField" />
+  <rule ref="category/java/bestpractices.xml/UnusedPrivateMethod" />
 </ruleset>
