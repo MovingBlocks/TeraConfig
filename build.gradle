@@ -37,8 +37,7 @@ publishing {
                     password artifactoryPass
                 }
             }
-            url "http://artifactory.terasology.org/artifactory/libs-release-local"
-            allowInsecureProtocol true  // 😱
+            url "https://artifactory.terasology.io/artifactory/libs-release-local"
         }
     }
 }
