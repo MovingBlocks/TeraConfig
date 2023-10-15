@@ -28,12 +28,12 @@
 
   <rule ref="category/java/bestpractices.xml/AvoidUsingHardCodedIP" />
   <rule ref="category/java/bestpractices.xml/CheckResultSet" />
+  <rule ref="category/java/bestpractices.xml/PrimitiveWrapperInstantiation" />
 
   <rule ref="category/java/codestyle.xml/ExtendsObject" />
   <rule ref="category/java/codestyle.xml/ForLoopShouldBeWhileLoop" />
 
   <rule ref="category/java/performance.xml/BigIntegerInstantiation" />
-  <rule ref="category/java/performance.xml/BooleanInstantiation" />
 
   <rule ref="category/java/design.xml/CollapsibleIfStatements" />
   <rule ref="category/java/design.xml/SimplifiedTernary" />
@@ -43,7 +43,6 @@
   <rule ref="category/java/errorprone.xml/CloneMethodMustBePublic" />
   <rule ref="category/java/errorprone.xml/CloneMethodMustImplementCloneable" />
   <rule ref="category/java/errorprone.xml/CloneMethodReturnTypeMustMatchClassName" />
-  <rule ref="category/java/errorprone.xml/CloneThrowsCloneNotSupportedException" />
   <rule ref="category/java/errorprone.xml/ProperCloneImplementation" />
 <!-- inline <rule ref="rulesets/java/finalizers.xml"/>-->
   <rule ref="category/java/errorprone.xml/AvoidCallingFinalize" />
@@ -55,7 +54,7 @@
 <!-- inline <rule ref="rulesets/java/logging-java.xml">-->
 <!--      <exclude name="GuardLogStatementJavaUtil"/>-->
 <!--  </rule>-->
-  <rule ref="category/java/errorprone.xml/InvalidSlf4jMessageFormat" />
+  <rule ref="category/java/errorprone.xml/InvalidLogMessageFormat" />
   <rule ref="category/java/errorprone.xml/MoreThanOneLogger" />
   <rule ref="category/java/errorprone.xml/ProperLogger" />
 
@@ -77,10 +76,6 @@
   <rule ref="category/java/bestpractices.xml/ReplaceHashtableWithMap" />
   <rule ref="category/java/bestpractices.xml/ReplaceVectorWithList" />
 
-  <rule ref="category/java/performance.xml/ByteInstantiation" />
-  <rule ref="category/java/performance.xml/IntegerInstantiation" />
-  <rule ref="category/java/performance.xml/LongInstantiation" />
-  <rule ref="category/java/performance.xml/ShortInstantiation" />
 <!-- inline <rule ref="rulesets/java/sunsecure.xml"/>-->
   <rule ref="category/java/bestpractices.xml/ArrayIsStoredDirectly" />
   <rule ref="category/java/bestpractices.xml/MethodReturnsInternalArray" />
