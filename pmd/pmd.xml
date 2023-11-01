@@ -7,7 +7,6 @@
       Terasology PMD ruleset
   </description>
   <exclude-pattern>.*/org.terasology.protobuf/.*</exclude-pattern>
-<!-- inline <rule ref="rulesets/java/basic.xml"/>  -->
   <rule ref="category/java/errorprone.xml/AvoidBranchingStatementAsLastInLoop" />
   <rule ref="category/java/errorprone.xml/AvoidDecimalLiteralsInBigDecimalConstructor" />
   <rule ref="category/java/errorprone.xml/AvoidMultipleUnaryOperators" />
@@ -37,32 +36,23 @@
 
   <rule ref="category/java/design.xml/CollapsibleIfStatements" />
   <rule ref="category/java/design.xml/SimplifiedTernary" />
-<!--  inline <rule ref="rulesets/java/braces.xml"/>-->
   <rule ref="category/java/codestyle.xml/ControlStatementBraces" />
-<!-- inline  <rule ref="rulesets/java/clone.xml"/>-->
   <rule ref="category/java/errorprone.xml/CloneMethodMustBePublic" />
   <rule ref="category/java/errorprone.xml/CloneMethodMustImplementCloneable" />
   <rule ref="category/java/errorprone.xml/CloneMethodReturnTypeMustMatchClassName" />
   <rule ref="category/java/errorprone.xml/ProperCloneImplementation" />
-<!-- inline <rule ref="rulesets/java/finalizers.xml"/>-->
   <rule ref="category/java/errorprone.xml/AvoidCallingFinalize" />
   <rule ref="category/java/errorprone.xml/EmptyFinalizer" />
   <rule ref="category/java/errorprone.xml/FinalizeDoesNotCallSuperFinalize" />
   <rule ref="category/java/errorprone.xml/FinalizeOnlyCallsSuperFinalize" />
   <rule ref="category/java/errorprone.xml/FinalizeOverloaded" />
   <rule ref="category/java/errorprone.xml/FinalizeShouldBeProtected" />
-<!-- inline <rule ref="rulesets/java/logging-java.xml">-->
-<!--      <exclude name="GuardLogStatementJavaUtil"/>-->
-<!--  </rule>-->
   <rule ref="category/java/errorprone.xml/InvalidLogMessageFormat" />
   <rule ref="category/java/errorprone.xml/MoreThanOneLogger" />
   <rule ref="category/java/errorprone.xml/ProperLogger" />
 
   <rule ref="category/java/bestpractices.xml/AvoidPrintStackTrace" />
-  <!-- GuardLogStatementJavaUtil has been merged into GuardLogStatement -->
-  <rule ref="category/java/bestpractices.xml/GuardLogStatement" name="GuardLogStatementJavaUtil" />
   <rule ref="category/java/bestpractices.xml/SystemPrintln" />
-<!-- inline <rule ref="rulesets/java/migrating.xml"/>-->
   <rule ref="category/java/errorprone.xml/AvoidAssertAsIdentifier" />
   <rule ref="category/java/errorprone.xml/AvoidEnumAsIdentifier" />
 
@@ -76,10 +66,8 @@
   <rule ref="category/java/bestpractices.xml/ReplaceHashtableWithMap" />
   <rule ref="category/java/bestpractices.xml/ReplaceVectorWithList" />
 
-<!-- inline <rule ref="rulesets/java/sunsecure.xml"/>-->
   <rule ref="category/java/bestpractices.xml/ArrayIsStoredDirectly" />
   <rule ref="category/java/bestpractices.xml/MethodReturnsInternalArray" />
-<!-- inline <rule ref="rulesets/java/unusedcode.xml"/>-->
   <rule ref="category/java/bestpractices.xml/UnusedFormalParameter" />
   <rule ref="category/java/bestpractices.xml/UnusedLocalVariable" />
   <rule ref="category/java/bestpractices.xml/UnusedPrivateField" />
